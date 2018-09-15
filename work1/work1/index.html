@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>注册信息</title>
+		<script type="text/javascript" src="js/wrok1.js"></script>
+	</head>
+	<body>
+		<h1>请填写个人信息</h1>
+		<fieldset>
+			<legend><font color="red">基本信息</font></legend>
+			<form method="post" action="">
+				姓名<input type="text" name="names" required="required" placeholder="请输入姓名"/><font color="red">*</font><br />
+				年龄<input type="number" name="age" placeholder="请输入年龄" min="0" step="1"/>
+			</form>
+		</fieldset>
+		<fieldset>
+			<legend><font color="red">你想在哪里收到邮件</font></legend>
+			<form method="post" action="">
+				<input type="search" list="emails" id="txt" placeholder="请输入邮箱"  autocomplete="on"/><font color="red">*</font><br />
+				<div id="opt" style="display: none;">
+					<!--<datalist id="emails">-->
+						<ul>
+						<li>@qq.com</li>
+						<li>@163.com</li>
+						<li>@gmail.com</li>
+						<li>@yahoo.com.cn</li>
+						<li>@126.com</li>
+						</ul>
+					<!--</datalist>-->
+				</div>
+			</form>
+		</fieldset>
+		<fieldset>
+			<legend><font color="red">收入情况</font></legend>
+			<form method="post" action="">
+				月收入<input type="search" list="salary"/>
+				<datalist id="salary">
+					<option>10k+</option>
+					<option>20k+</option>
+					<option>30k+</option>
+					<option>40k+</option>
+					<option>50k+</option>
+				</datalist><br />
+				银行卡<input type="text" />
+				有效期<input type="date" name="datademo" />
+			</form>
+		</fieldset>
+		<fieldset>
+			<legend><font color="red">选取提交文件</font></legend>
+			文件<input type="file" />
+		</fieldset>
+		<form action="" method="post">
+			<input type="submit"/>
+		</form>
+	</body>
+</html>
