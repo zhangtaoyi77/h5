@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    #container {
+      width: 500px;
+      min-height: 300px;
+      border: 1px solid #aaa;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+<div id="container">
+ 
+</div>
+<script>
+  document.ondragover = function(e){
+    e.preventDefault();
+  }
+  document.ondrop = function(e){
+    e.preventDefault();
+  }
+ 
+  container.ondragover = function(e){
+    e.preventDefault();
+  }
+  container.ondrop = function(e){
+    var f0 = e.dataTransfer.files[0];
+    var fr = new FileReader();
+    
+    fr.readAsDataURL(f0);
+    fr.onload = function(){
+      var img = new Image();
+      img.src = fr.result; 
+      img.style.width="500px";
+      img.style.height="300px";
+      container.appendChild(img);
+    }
+  }
+</script>
+</body>
+</html>
