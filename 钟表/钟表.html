@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>clock</title>
+		<style>
+			#clock{
+				border: solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="clock" width="500" height="500"></canvas>
+		<script>
+			window.onload=function(){
+				var canvas=document.getElementById('clock');
+				var context=canvas.getContext('2d');
+				function drawClock(){
+					context.clearRect(0,0,500,500);
+					//制作表盘
+					context.beginPath();
+					context.arc(250,250,150,0,2*Math.PI,true);
+					context.lineWidth='5';
+					context.strokeStyle='springgreen';
+					context.stroke();
+					context.closePath();
+					context.translate(250,250);
+					//制作分刻度
+					for(var i=0;i<60;i++){
+						if(i%5==0){
+						context.beginPath();
+						context.save();
+						context.fillStyle='red';
+						context.fillRect(0,-125,3,15);
+						context.rotate(6/180*Math.PI);
+						context.stroke();
+						}
+						else{
+						context.beginPath();
+						context.save();
+						context.fillStyle='black';
+						context.fillRect(0,-125,3,10);
+						context.rotate(6/180*Math.PI);
+						context.stroke();
+						}
+					}
+					context.fillText(12,-3,-100,10);
+					for(var j=1;j<=11;j++){
+						context.fillText(j,(-3+100*Math.sin(j*Math.PI/6)),-100*Math.cos(j*Math.PI/6),10);
+					}
+					//获取当前时间
+					var date=new Date();
+					var hour=date.getHours();
+					var min=date.getMinutes();
+					var sec=date.getSeconds();
+//					console.log('sec');
+					//制作秒针
+					context.beginPath();
+					context.save();
+					context.moveTo(0,0);
+					//context.arc(0,0,100,sec*2*Math.PI/60,(sec*2*Math.PI/60),false);
+					context.lineTo(110*Math.sin(sec*2*Math.PI/60),(-110*Math.cos(sec*2*Math.PI/60)));
+					context.lineWidth='1';
+					context.strokeStyle='red';
+					//context.rotate(6/180*Math.PI);
+					context.stroke();
+					//context.clearRect(100*Math.sin(sec*2*Math.PI/60),(-100*Math.cos(sec*2*Math.PI/60)),100,100);
+					context.closePath();
+					//制作分针
+					context.beginPath();
+					//context.save();
+					context.moveTo(0,0);
+					//context.arc(0,0,80,min*2*Math.PI/60,(min*2*Math.PI/60),false);
+					context.lineTo(90*Math.sin(min*2*Math.PI/60),(-90*Math.cos(min*2*Math.PI/60)));
+					context.lineWidth='2';
+					context.strokeStyle='pink';
+					context.stroke();
+					context.closePath();
+					//制作时针
+					context.beginPath();
+					//context.save();
+					context.moveTo(0,0);
+					//context.arc(0,0,60,hour*2*Math.PI/12,(hour*2*Math.PI/12),false);
+					context.lineTo(80*Math.sin(hour*2*Math.PI/12),(-80*Math.cos(hour*2*Math.PI/12)));
+					context.lineWidth='3';
+					context.strokeStyle='purple';
+					context.stroke();
+					context.closePath();
+					context.translate(-250,-250);
+					//context.restore();
+				}
+				setInterval(drawClock,1000);
+				//drawClock();
+			}
+		</script>
+	</body>
+</html>
