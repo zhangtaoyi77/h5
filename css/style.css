@@ -1,0 +1,130 @@
+/*全局样式*/
+h1,h3,p,a,button{
+    font-family: "Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB";
+}
+ 
+.nav-title{
+   font-family: 'Abril Fatface', cursive; 
+}
+.navbar-header .nav-title:hover,
+.navbar-header .nav-title:focus{
+  background:#fff;
+  color:#000;
+}
+
+.cative{
+  font-family:'Comfortaa', cursive;
+}
+.navbar-collapse .navbar-nav li a:hover,
+.navbar-collapse .navbar-nav li a:focus{
+  color:#000;
+  background:#fff;
+}
+ul li{
+	list-style-type: none;
+}
+/*第一屏*/
+.onepage{
+    height: 600px;
+}
+.onepage-bg{
+    height: 600px;
+    width:100%;
+    position: absolute;
+    background-position: center center;
+    background-size: cover;
+}
+#onepagebg{
+    background-image: url("../images/love.png");
+}
+ 
+.title-text{
+    margin-left:50px;
+}
+.headh1content{
+    margin-top: 150px;
+    line-height: 75px;
+}
+ 
+.headfontsize h1{
+    font-size: 50px;
+    color: #fff;
+}
+ 
+.headfontsize h3,.headfontsize p{
+    color: lightpink;
+}
+ 
+.headfontsize .headtext{
+    color: yellow;
+    font-size: 12pt;
+}
+.btn-app-store{
+    margin-top:15px;
+}
+
+/*第二屏*/
+.twopage{
+    padding:2px 0 0 2px;
+    height: auto;
+    position: relative;
+}
+.twopage-text{
+    width:100%;
+    text-align: left;
+    margin-bottom: 10px;
+}
+.twopage .row{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.twopages-courses{
+    float: left;
+    background: #fff;
+    padding: 0 2px 2px 0;
+    position: relative;
+ 
+}
+.twopages-courses >a{
+    width: 100%;
+    height: 170px;
+    float: left;
+    text-align: center;
+    position: relative;
+}
+.twopages-courses >a >img{
+    width:200px;
+    height: 160px;
+    margin-left: 10px;
+}
+.classicon{
+    width:100%;
+    height: 100%;
+    position: absolute;
+    left:0;
+    top:0;
+    color:#fff;
+    opacity: 0;
+}
+.classicon h3{
+    margin-top: 80px;
+    color: #d1e973;
+}
+.classicon:hover{
+    background: gray;
+    opacity: 0.5;
+    transition: opactiy 0.5s;
+    -webkit-transition:opactiy 0.5s;
+    -o-transition: opactiy 0.5s;
+    -moz-transition: opactiy 0.5s;
+    -ms-transition: opactiy 0.5s;
+}
+.footer {
+        border-top: 1px solid #e5e5e5;
+        color: #777;
+        padding: 0px 0px 10px 0px;
+        background-color: black;
+    }
+    body {
+        padding-bottom: 70px;
+    }
